@@ -50,6 +50,10 @@ class Film
     return customer_array.map { |customer_hash| Customer.new(customer_hash) }
   end
 
+  def number_of_customers()
+    self.all_customers().length
+  end
+
   def self.all() # READ
     sql = "SELECT * FROM films"
     film_array = SqlRunner.run(sql)
