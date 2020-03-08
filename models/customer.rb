@@ -54,6 +54,13 @@ class Customer
     self.all_films().length
   end
 
+  def self.find_customer_by_id(id_to_find)
+    sql = "SELECT * FROM customers WHERE customers.id = $1"
+    values = [id_to_find]
+    customer_array = SqlRunner.run(sql, values)
+    return customer_array.map { |customer| Customer.new(customer) }
+  end
+
   def self.all() # READ
     sql = "SELECT * FROM customers"
     customer_array = SqlRunner.run(sql)

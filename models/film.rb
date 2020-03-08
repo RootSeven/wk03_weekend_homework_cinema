@@ -60,6 +60,13 @@ class Film
     return film_array.map { |film_hash| Film.new(film_hash) }
   end
 
+  def self.find_film_by_id(id_to_find)
+    sql = "SELECT * FROM films WHERE films.id = $1"
+    values = [id_to_find]
+    film_array = SqlRunner.run(sql, values)
+    return film_array.map { |film_hash| Film.new(film_hash) }
+  end
+
   def self.delete_all() # DELETE
     sql = "DELETE FROM films"
     SqlRunner.run(sql)

@@ -26,11 +26,11 @@ customer3.save()
 
 # INSTANTIATE FILMS
 film1 = Film.new( {'title' => 'Red Dragon',
-                    'price' => 8} )
+                    'price' => 3} )
 film1.save()
 
 film2 = Film.new( {'title' => 'Silence of the Lambs',
-                    'price' => 9} )
+                    'price' => 10} )
 film2.save()
 
 # INSTANTIATE TICKETS
@@ -41,14 +41,6 @@ ticket1.save()
 ticket2 = Ticket.new( {'customer_id' => customer1.id,
                     'film_id' => film1.id} )
 ticket2.save()
-
-ticket3 = Ticket.new( {'customer_id' => customer1.id,
-                        'film_id' => film1.id})
-ticket3.save()
-
-ticket4 = Ticket.new( {'customer_id' => customer1.id,
-                        'film_id' => film1.id})
-ticket4.save()
 
 binding.pry
 nil

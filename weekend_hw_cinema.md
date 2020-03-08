@@ -24,7 +24,7 @@ It's enough if you can call your methods in pry, don't worry about an interface.
   x Show which films a customer has booked to see, and see which customers are coming to see one film.
 
 ### Basic extensions:
-  - Buying tickets should decrease the funds of the customer by the price
+  x Buying tickets should decrease the funds of the customer by the price
   x Check how many tickets were bought by a customer
   x Check how many customers are going to watch a certain film
 

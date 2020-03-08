@@ -27,6 +27,15 @@ class Ticket
 
     ticket_hash = SqlRunner.run(sql, values).first()
     @id = ticket_hash['id'].to_i
+
+    customer = Customer.find_customer_by_id(@customer_id).first   # Finds customer by id and saves object
+    film = Film.find_film_by_id(@film_id).first                   # Finds film by id and saves object
+
+    customer.funds -= film.price                                  # Deducts the film's price from the customer's funds in the created customer object
+
+    customer.update()                                             # Updates the customer with the customer object created before
+    # "Inner join"? Never heard of it.
+
   end
 
   def update() # UPDATE
