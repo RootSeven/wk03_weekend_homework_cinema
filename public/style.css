@@ -1,0 +1,15 @@
+body {
+  background-color: #7c9ea8;
+}
+
+h1 {
+  font-family: Arial;
+  color: white;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+}
